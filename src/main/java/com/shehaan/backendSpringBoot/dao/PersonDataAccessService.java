@@ -1,4 +1,36 @@
 package com.shehaan.backendSpringBoot.dao;
 
-public class PersonDataAccessService {
+import com.shehaan.backendSpringBoot.model.Person;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository("postgres")
+public class PersonDataAccessService implements PersonDao{
+    @Override
+    public int insertPerson(UUID id, Person person) {
+        return 0;
+    }
+
+    @Override
+    public List<Person> selectAllPersons() {
+        return List.of(new Person(UUID.randomUUID(),"data from postgres"));
+    }
+
+    @Override
+    public Optional<Person> selectPersonById(UUID id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public int deletePersonById(UUID id) {
+        return 0;
+    }
+
+    @Override
+    public int updatePersonById(UUID id, Person person) {
+        return 0;
+    }
 }
